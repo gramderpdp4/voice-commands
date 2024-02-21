@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind utilities;
+
+:root {
+    --color-dark-1: hsl(240 10% 3.9%);
+    --color-dark-2: #121212;
+    --color-dark-3: #2e2e2e;
+    --color-dark-4: #212121;
+    --color-dark-5: #181818;
+    --color-dark-6: #242627;
+    --color-dark-7: #555555;
+    --color-white: #ffffff;
+    --border-color: #3f3f46;
+}

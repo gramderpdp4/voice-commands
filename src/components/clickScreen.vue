@@ -15,11 +15,12 @@ export default {
 
     methods: {
         initializeCommands() {
-            this.dialog?.data.initializeCommandsVoice();
 
-            document.removeEventListener('click', this.initializeCommands)
+            ( this.dialog as { data?: { initializeCommandsVoice: () => void } })?.data?.initializeCommandsVoice()
 
-            this.dialog!.close();
+            document.removeEventListener('click', this.initializeCommands);
+
+            ( this.dialog as { close: () => void } ).close()
         }
     },
 

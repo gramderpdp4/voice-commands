@@ -32,20 +32,8 @@ import mapsLogo from './assets/maps.png';
 
 import Artyom from "artyom.js"
 
-interface IDataItems {
-  logo: string,
-  name: string,
-  command: string
-}
-
-interface IData {
-  items: IDataItems[],
-  artyom: Artyom,
-  firstClick: boolean
-}
-
 export default {
-  data(): IData {
+  data() {
     return {
       items: [
         { logo: youtubeLogo, name: 'Youtube', command: 'Diga: Abrir Youtube' },
@@ -121,7 +109,7 @@ export default {
         {
           indexes: ["Abre o *", "Abrir o *", "Abrir *"],
           smart: true,
-          action: (index: number, wildcard: string) => {
+          action: (_index: number, wildcard: string) => {
             let dialog: object = {}, txt: string = `Abrindo ${wildcard}`;
 
             if (wildcard) {
@@ -151,7 +139,7 @@ export default {
 
                     if (!windowOpened) this.newLockedWindow();
 
-                    dialog.close()
+                    ( dialog as { close: () => void } ).close()
                   }
                 })
               }

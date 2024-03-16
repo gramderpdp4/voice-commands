@@ -15,7 +15,7 @@ export default {
 
     computed: {
         command(): string | undefined {
-            return this.dialog?.data?.command
+            return ( this.dialog as { data: { command: string} } )?.data?.command
         }
     },
 }
